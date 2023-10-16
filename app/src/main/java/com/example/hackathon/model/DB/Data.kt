@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database ()
+@Database (entities = [Manga::class], version = 1)
 abstract class Data : RoomDatabase() {
+
 
     companion object
     {

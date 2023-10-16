@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "Manga")
 data class Manga(@PrimaryKey(autoGenerate = true)
-                var idmanga: Int? = null,
-                @ColumnInfo(name = "Name")
+                var idmanga : Int? = null,
+                 @ColumnInfo(name = "Name")
                 var namemanga : String,
-                @ColumnInfo(name = "")
+                 @ColumnInfo(name = "")
                 var idtag : Int)
