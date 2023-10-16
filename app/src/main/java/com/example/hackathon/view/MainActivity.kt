@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -24,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.example.hackathon.ui.theme.HackathonTheme
 
 import androidx.compose.material.*
+import androidx.compose.material.icons.filled.Add
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,16 +45,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Column {
+
         Text(
             text = "Hello $name!",
             modifier = modifier
         )
-        Text(
-            text = "Hello $name!",
-            modifier = modifier
-        )
-    }
+
+
 
 }
 
@@ -72,14 +71,22 @@ fun MyScreenContent() {
     Scaffold(
         topBar = {
             TopAppBar(
+
                 title = {
-                    Text(text = "My App")
-                },
-                navigationIcon = {
-                    IconButton(onClick = { /* Handle navigation icon click */ }) {
-                        Icon(Icons.Default.Menu, contentDescription = "Menu")
+                    Text(text = "")
+                }, actions = {
+                    Row {
+                            IconButton(onClick = { /* Handle navigation icon click */ }) {
+                                Icon(Icons.Default.Add, contentDescription = "Menu")
+                            }
+                        IconButton(onClick = { /* Handle navigation icon click */ }) {
+                            Icon(Icons.Default.Add, contentDescription = "add")
+                        }
                     }
+
+
                 }
+
             )
         },
         content = {
@@ -95,7 +102,7 @@ fun MyScreenContent() {
 fun Greeting(name: String) {
     Text(
         text = "Hello $name!",
-        style = MaterialTheme.typography.headlineLarge,
+        style = MaterialTheme.typography.headlineSmall,
         modifier = Modifier.padding(16.dp)
     )
 }

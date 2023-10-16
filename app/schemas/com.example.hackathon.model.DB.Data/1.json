@@ -2,35 +2,47 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "bfb35b0e8d00531ba19e31ae5a015088",
+    "identityHash": "d0a7f3431057b83cf8531d3aa84aebc7",
     "entities": [
       {
-        "tableName": "Manga",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idmanga` INTEGER PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL, `` INTEGER NOT NULL)",
+        "tableName": "Book",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL, `Describe` TEXT NOT NULL, `Type` TEXT NOT NULL, `Data` TEXT NOT NULL)",
         "fields": [
           {
-            "fieldPath": "idmanga",
-            "columnName": "idmanga",
+            "fieldPath": "id",
+            "columnName": "id",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
-            "fieldPath": "namemanga",
+            "fieldPath": "name",
             "columnName": "Name",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "idtag",
-            "columnName": "",
-            "affinity": "INTEGER",
+            "fieldPath": "describe",
+            "columnName": "Describe",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "Type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "year",
+            "columnName": "Data",
+            "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
           "autoGenerate": true,
           "columnNames": [
-            "idmanga"
+            "id"
           ]
         },
         "indices": [],
@@ -40,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bfb35b0e8d00531ba19e31ae5a015088')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd0a7f3431057b83cf8531d3aa84aebc7')"
     ]
   }
 }
