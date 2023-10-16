@@ -37,6 +37,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("lololol")
+                    DefaultPreview()
                 }
             }
         }
@@ -116,7 +117,7 @@ fun NameList(names: List<String>) {
     }
 }
 
-@Preview
+//@Preview
 @Composable
 fun DefaultPreview() {
     MyScreenContent()
