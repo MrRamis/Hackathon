@@ -34,6 +34,8 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.materialIcon
 import androidx.compose.material3.Button
+import androidx.compose.ui.res.stringResource
+import com.example.hackathon.R
 
 
 class MainActivity : ComponentActivity() {
@@ -68,20 +70,20 @@ fun MyScreenContent() {
                 navigationIcon ={
                     Row{
                         Button(onClick = {  }) {
-                            Text(text = "Все")
+                            Text(text = stringResource(id = R.string.allbtn))
                                 //border = BorderStroke(3.dp, Color.DarkGray)
                             //Icon(Icons.Default.Add, contentDescription = "Reading")
                         }
                         Button(onClick = { /* Handle navigation icon click */ }) {
-                            Text(text = "read")
+                            Text(text = stringResource(id = R.string.readbtn))
                         }
                         //spacer()
                         //Spacer(modifier = Modifier.weight(0.5f))
                         Button(onClick = { /* Handle navigation icon click */ }) {
-                            Text(text = "future")
+                            Text(text = stringResource(id = R.string.futurebtn))
                         }
                         Button(onClick = { /* Handle navigation icon click */ }) {
-                            Text(text = "fav")
+                            Text(text = stringResource(id = R.string.favbtn))
                             //materialIcon()
                         }
                     }
@@ -105,7 +107,7 @@ fun MyScreenContent() {
             Column {
 
                 Divider()
-                NameList(names = listOf("Alice", "Charlie"))
+                NameList(names = listOf("book", "author"))
             }
         }
     )
@@ -121,9 +123,22 @@ fun Spacer(weight: Modifier) {
 
 @Composable
 fun NameList(names: List<String>) {
-   Column {
-        for (name in names) {
-            Text(text = name, modifier = Modifier.padding(16.dp))
+    Column {
+        //Spacer(modifier = Modifier.weight(1f))
+        Row {
+
+
+            for (name in names) {
+                Text(text = "ree", modifier = Modifier.padding(16.dp))
+
+            }
+        }
+//сделать диначический row
+        Row {
+
+            for (name in names) {
+                Text(text = name, modifier = Modifier.padding(16.dp))
+            }
         }
     }
 }
