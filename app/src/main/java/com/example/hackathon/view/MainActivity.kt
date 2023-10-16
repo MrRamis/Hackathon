@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    DefaultPreview()
+                    //DefaultPreview()
                 }
             }
         }
@@ -148,7 +148,7 @@ fun NameList(names: List<String>) {
     }
 }
 
-//@Preview
+@Preview
 @Composable
 fun DefaultPreview() {
     MyScreenContent()
