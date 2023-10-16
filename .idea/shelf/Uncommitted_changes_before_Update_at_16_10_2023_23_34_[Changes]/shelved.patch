@@ -1,0 +1,27 @@
+Index: app/src/main/java/com/example/hackathon/view/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.hackathon.view\r\nimport android.annotation.SuppressLint\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.compose.foundation.layout.Column\r\nimport androidx.compose.foundation.layout.Row\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.foundation.layout.padding\r\nimport androidx.compose.material.icons.Icons\r\nimport androidx.compose.material.icons.filled.Menu\r\nimport androidx.compose.material3.Divider\r\nimport androidx.compose.material3.ExperimentalMaterial3Api\r\nimport androidx.compose.material3.Icon\r\nimport androidx.compose.material3.IconButton\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.Scaffold\r\nimport androidx.compose.material3.Surface\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.material3.TopAppBar\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport androidx.compose.ui.unit.dp\r\nimport com.example.hackathon.ui.theme.HackathonTheme\r\n\r\nimport androidx.compose.material.*\r\nimport androidx.compose.material.icons.filled.Add\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContent {\r\n            HackathonTheme {\r\n                Surface(\r\n                    modifier = Modifier.fillMaxSize(),\r\n                    color = MaterialTheme.colorScheme.background\r\n                ) {\r\n                    Greeting(\"lololol\")\r\n                    DefaultPreview()\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Composable\r\nfun Greeting(name: String, modifier: Modifier = Modifier) {\r\n\r\n        Text(\r\n            text = \"Hello $name!\",\r\n            modifier = modifier\r\n        )\r\n\r\n\r\n\r\n}\r\n\r\n//@Preview(showBackground = true)\r\n//@Composable\r\n//fun GreetingPreview() {\r\n//    HackathonTheme {\r\n//        Greeting(\"Android\")\r\n//    }\r\n//}\r\n\r\n@SuppressLint(\"UnusedMaterial3ScaffoldPaddingParameter\")\r\n@OptIn(ExperimentalMaterial3Api::class)\r\n@Composable\r\n\r\nfun MyScreenContent() {\r\n    Scaffold(\r\n        topBar = {\r\n            TopAppBar(\r\n\r\n                title = {\r\n                    Text(text = \"\")\r\n                }, actions = {\r\n                    Row {\r\n                            IconButton(onClick = { /* Handle navigation icon click */ }) {\r\n                                Icon(Icons.Default.Add, contentDescription = \"Menu\")\r\n                            }\r\n                        IconButton(onClick = { /* Handle navigation icon click */ }) {\r\n                            Icon(Icons.Default.Add, contentDescription = \"add\")\r\n                        }\r\n                    }\r\n\r\n\r\n                }\r\n\r\n            )\r\n        },\r\n        content = {\r\n            Column {\r\n                Greeting(\"Hello\")\r\n                Divider()\r\n                NameList(names = listOf(\"Alice\", \"Bob\", \"Charlie\"))\r\n            }\r\n        }\r\n    )\r\n}\r\n@Composable\r\nfun Greeting(name: String) {\r\n    Text(\r\n        text = \"Hello $name!\",\r\n        style = MaterialTheme.typography.headlineSmall,\r\n        modifier = Modifier.padding(16.dp)\r\n    )\r\n}\r\n\r\n@Composable\r\nfun NameList(names: List<String>) {\r\n    Column {\r\n        for (name in names) {\r\n            Text(text = name, modifier = Modifier.padding(16.dp))\r\n        }\r\n    }\r\n}\r\n\r\n//@Preview\r\n@Composable\r\nfun DefaultPreview() {\r\n    MyScreenContent()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/hackathon/view/MainActivity.kt b/app/src/main/java/com/example/hackathon/view/MainActivity.kt
+--- a/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(revision 3117094a098fa1aba254bb30d68775954d89cb69)
++++ b/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(date 1697487311294)
+@@ -37,7 +37,6 @@
+                     color = MaterialTheme.colorScheme.background
+                 ) {
+                     Greeting("lololol")
+-                    DefaultPreview()
+                 }
+             }
+         }
+@@ -117,7 +116,7 @@
+     }
+ }
+ 
+-//@Preview
++@Preview
+ @Composable
+ fun DefaultPreview() {
+     MyScreenContent()
