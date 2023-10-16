@@ -1,0 +1,168 @@
+Index: app/src/main/java/com/example/hackathon/view/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.hackathon.view\r\nimport android.annotation.SuppressLint\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.compose.foundation.layout.Column\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.foundation.layout.padding\r\nimport androidx.compose.material.icons.Icons\r\nimport androidx.compose.material.icons.filled.Menu\r\nimport androidx.compose.material3.Divider\r\nimport androidx.compose.material3.ExperimentalMaterial3Api\r\nimport androidx.compose.material3.Icon\r\nimport androidx.compose.material3.IconButton\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.Scaffold\r\nimport androidx.compose.material3.Surface\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.material3.TopAppBar\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport androidx.compose.ui.unit.dp\r\nimport com.example.hackathon.ui.theme.HackathonTheme\r\n\r\nimport androidx.compose.material.*\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContent {\r\n            HackathonTheme {\r\n                Surface(\r\n                    modifier = Modifier.fillMaxSize(),\r\n                    color = MaterialTheme.colorScheme.background\r\n                ) {\r\n                    Greeting(\"lololol\")\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Composable\r\nfun Greeting(name: String, modifier: Modifier = Modifier) {\r\n    Column {\r\n        Text(\r\n            text = \"Hello $name!\",\r\n            modifier = modifier\r\n        )\r\n        Text(\r\n            text = \"Hello $name!\",\r\n            modifier = modifier\r\n        )\r\n    }\r\n\r\n}\r\n\r\n//@Preview(showBackground = true)\r\n//@Composable\r\n//fun GreetingPreview() {\r\n//    HackathonTheme {\r\n//        Greeting(\"Android\")\r\n//    }\r\n//}\r\n\r\n@SuppressLint(\"UnusedMaterial3ScaffoldPaddingParameter\")\r\n@OptIn(ExperimentalMaterial3Api::class)\r\n@Composable\r\n\r\nfun MyScreenContent() {\r\n    Scaffold(\r\n        topBar = {\r\n            TopAppBar(\r\n                title = {\r\n                    Text(text = \"My App\")\r\n                },\r\n                navigationIcon = {\r\n                    IconButton(onClick = { /* Handle navigation icon click */ }) {\r\n                        Icon(Icons.Default.Menu, contentDescription = \"Menu\")\r\n                    }\r\n                }\r\n            )\r\n        },\r\n        content = {\r\n            Column {\r\n                Greeting(\"Hello\")\r\n                Divider()\r\n                NameList(names = listOf(\"Alice\", \"Bob\", \"Charlie\"))\r\n            }\r\n        }\r\n    )\r\n}\r\n@Composable\r\nfun Greeting(name: String) {\r\n    Text(\r\n        text = \"Hello $name!\",\r\n        style = MaterialTheme.typography.headlineLarge,\r\n        modifier = Modifier.padding(16.dp)\r\n    )\r\n}\r\n\r\n@Composable\r\nfun NameList(names: List<String>) {\r\n    Column {\r\n        for (name in names) {\r\n            Text(text = name, modifier = Modifier.padding(16.dp))\r\n        }\r\n    }\r\n}\r\n\r\n@Preview\r\n@Composable\r\nfun DefaultPreview() {\r\n    MyScreenContent()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/hackathon/view/MainActivity.kt b/app/src/main/java/com/example/hackathon/view/MainActivity.kt
+--- a/app/src/main/java/com/example/hackathon/view/MainActivity.kt	
++++ b/app/src/main/java/com/example/hackathon/view/MainActivity.kt	
+@@ -4,12 +4,17 @@
+ import androidx.activity.ComponentActivity
+ import androidx.activity.compose.setContent
+ import androidx.compose.foundation.layout.Column
++import androidx.compose.foundation.layout.Row
+ import androidx.compose.foundation.layout.fillMaxSize
++import androidx.compose.foundation.layout.fillMaxWidth
+ import androidx.compose.foundation.layout.padding
+ import androidx.compose.material.icons.Icons
+ import androidx.compose.material.icons.filled.Menu
+ import androidx.compose.material3.Divider
+ import androidx.compose.material3.ExperimentalMaterial3Api
++//import androidx.compose.material.Button
++import androidx.compose.runtime.mutableStateOf
++import androidx.compose.runtime.remember
+ import androidx.compose.material3.Icon
+ import androidx.compose.material3.IconButton
+ import androidx.compose.material3.MaterialTheme
+@@ -24,37 +29,43 @@
+ import com.example.hackathon.ui.theme.HackathonTheme
+ 
+ import androidx.compose.material.*
++import androidx.compose.material.icons.filled.Search
++import androidx.compose.ui.graphics.vector.ImageVector
++import androidx.compose.ui.res.vectorResource
++import com.example.hackathon.R
+ 
+ class MainActivity : ComponentActivity() {
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContent {
++            //val isAdded = remember{ mutableStateOf(false)}
+             HackathonTheme {
+                 Surface(
+                     modifier = Modifier.fillMaxSize(),
+                     color = MaterialTheme.colorScheme.background
+                 ) {
+                     Greeting("lololol")
++                    DefaultPreview()
+                 }
+             }
+         }
+     }
+ }
+-
+-@Composable
+-fun Greeting(name: String, modifier: Modifier = Modifier) {
+-    Column {
+-        Text(
+-            text = "Hello $name!",
+-            modifier = modifier
+-        )
+-        Text(
+-            text = "Hello $name!",
+-            modifier = modifier
+-        )
+-    }
+ 
+-}
++//@Composable
++//fun Greeting(name: String, modifier: Modifier = Modifier) {
++//    Column {
++//        Text(
++//            text = "Hello $name!",
++//            modifier = modifier
++//        )
++//        Text(
++//            text = "Hello $name!",
++//            modifier = modifier
++//        )
++//    }
++//
++//}
+ 
+ //@Preview(showBackground = true)
+ //@Composable
+@@ -69,16 +80,55 @@
+ @Composable
+ 
+ fun MyScreenContent() {
++        val isAdded = remember{ mutableStateOf(false)}
+     Scaffold(
+         topBar = {
+             TopAppBar(
+                 title = {
+-                    Text(text = "My App")
++                    Text(text = "Shelfie")
+                 },
+-                navigationIcon = {
+-                    IconButton(onClick = { /* Handle navigation icon click */ }) {
+-                        Icon(Icons.Default.Menu, contentDescription = "Menu")
++                actions= {
++                    //navigationIcon = {
++                    Row {
++                        IconButton(onClick = { /* Handle navigation icon click */ }) {
++                            Icon(Icons.Default.Menu, contentDescription = "Menu")
++                            IconButton(onClick = { }) {
++                                Icon(
++                                    Icons.Filled.Search,
++                                    //imageVector = ImageVector.vectorResource(id = R.drawable.ic_button),
++                                    contentDescription = "Поиск"
++                                )
++                            }
++                        },
++                        var modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
++                        navigationIcon = {
++                            IconButton(onClick = { /* Действие при нажатии на иконку навигации */ }) {
++                                Icon(
++                                    //imageVector = ImageVector.vectorResource(id = R.drawable.ic_navigation),
++                                    contentDescription = "Navigation Icon"
++                                )
++                            }
++
++                        }
++
+                     }
++                },
++
++
++
++
++
++                floatingActionButton = {
++                    FloatingActionButton(
++                        content = {
++                            if (isAdded.value) Icon(
++                                Icons.Filled.Clear,
++                                contentDescription = "Удалить"
++                            )
++                            else Icon(Icons.Filled.Add, contentDescription = "Добавить")
++                        },
++                        onClick = { isAdded.value = !isAdded.value }
++                    )
+                 }
+             )
+         },
+@@ -91,6 +141,12 @@
+         }
+     )
+ }
++
++//@Composable
++//fun Spacer(weight: Any) {
++//
++//}
++
+ @Composable
+ fun Greeting(name: String) {
+     Text(
+@@ -109,6 +165,8 @@
+     }
+ }
+ 
++
++
+ @Preview
+ @Composable
+ fun DefaultPreview() {

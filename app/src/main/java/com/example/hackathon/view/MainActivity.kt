@@ -3,10 +3,16 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Divider
@@ -26,6 +32,9 @@ import com.example.hackathon.ui.theme.HackathonTheme
 
 import androidx.compose.material.*
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.materialIcon
+import androidx.compose.material3.Button
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,33 +45,16 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("lololol")
-                    DefaultPreview()
+
+                    //DefaultPreview()
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-
-        Text(
-            text = "Hello $name!",
-            modifier = modifier
-        )
 
 
-
-}
-
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview() {
-//    HackathonTheme {
-//        Greeting("Android")
-//    }
-//}
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -75,14 +67,53 @@ fun MyScreenContent() {
 
                 title = {
                     Text(text = "")
-                }, actions = {
-                    Row {
-                            IconButton(onClick = { /* Handle navigation icon click */ }) {
-                                Icon(Icons.Default.Add, contentDescription = "Menu")
-                            }
-                        IconButton(onClick = { /* Handle navigation icon click */ }) {
-                            Icon(Icons.Default.Add, contentDescription = "add")
+                },
+                navigationIcon ={
+                    Row{
+                        Button(onClick = {  }) {
+                            Text(text = "Все")
+                                //border = BorderStroke(3.dp, Color.DarkGray)
+                            //Icon(Icons.Default.Add, contentDescription = "Reading")
                         }
+                        Button(onClick = { /* Handle navigation icon click */ }) {
+                            Text(text = "read")
+                        }
+                        //spacer()
+                        //Spacer(modifier = Modifier.weight(0.5f))
+                        Button(onClick = { /* Handle navigation icon click */ }) {
+                            Text(text = "future")
+                        }
+                        Button(onClick = { /* Handle navigation icon click */ }) {
+                            Text(text = "fav")
+                            //materialIcon()
+                        }
+                    }
+
+                },
+                actions = {
+                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                            Button(
+                                onClick = { /* Handle navigation icon click */ },
+                                modifier = Modifier
+                                    .width(85.dp) // specify the desired width
+                                    .padding(13.dp) // optional padding
+                            ) {
+                                Icon(Icons.Default.Add, contentDescription = "Menu")
+
+                            }
+                        Button(onClick = { /* Handle navigation icon click */ },
+                                modifier = Modifier
+                                .width(85.dp) // specify the desired width
+                                .padding(13.dp) // optional padding
+                        ) {
+//                            Box(Modifier.padding(8.dp)){
+//                                Text(text ="Tvft")
+//                            }
+                            Icon(Icons.Default.Add, contentDescription = "add")
+
+
+                        }
+
                     }
 
 
@@ -92,21 +123,21 @@ fun MyScreenContent() {
         },
         content = {
             Column {
-                Greeting("Hello")
+
                 Divider()
                 NameList(names = listOf("Alice", "Bob", "Charlie"))
             }
         }
     )
 }
+
+
 @Composable
-fun Greeting(name: String) {
-    Text(
-        text = "Hello $name!",
-        style = MaterialTheme.typography.headlineSmall,
-        modifier = Modifier.padding(16.dp)
-    )
+fun Spacer(weight: Modifier) {
+
 }
+
+
 
 @Composable
 fun NameList(names: List<String>) {
@@ -117,7 +148,7 @@ fun NameList(names: List<String>) {
     }
 }
 
-//@Preview
+@Preview
 @Composable
 fun DefaultPreview() {
     MyScreenContent()
