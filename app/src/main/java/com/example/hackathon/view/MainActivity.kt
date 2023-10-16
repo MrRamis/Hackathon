@@ -15,6 +15,7 @@ import com.example.hackathon.ui.theme.HackathonTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var test = 0
         setContent {
             HackathonTheme {
                 // A surface container using the 'background' color from the theme
