@@ -22,10 +22,30 @@ import com.example.hackathon.ui.theme.HackathonTheme
 import com.example.hackathon.viewModel.Book
 import com.example.hackathon.viewModel.ViewModelGetBook
 
-class ViewGetBookActivity: ComponentActivity() {
+class ViewGetBookActivity(): ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val viewModelGetBook = ViewModelGetBook()
+         val viewModelGetBook = ViewModelGetBook(Book(1,"Ведьмаг дикая охота","«Сага о ведьмаке» — цикл книг польского писателя Анджея Сапковского в жанре фэнтези.\n" +
+                 "\n" +
+                 "Первый рассказ цикла увидел свет в 1986 году, а последняя книга — в 2013. Действие книг происходит в вымышленном Мире «Ведьмака», напоминающем Европу времён позднего средневековья, где рядом с людьми существуют разного рода волшебные существа и чудовища.\n" +
+                 "\n" +
+                 "Геральт из Ривии — один из последних «ведьмаков», бродячих охотников на чудовищ","Книга","2015")
+         )
+        setContent {
+            HackathonTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+
+                    GetBookActivity(viewModelGetBook)
+                }
+            }
+        }
+    }
+     fun onCreate(savedInstanceState: Bundle?, book: Book) {
+        super.onCreate(savedInstanceState)
+        val viewModelGetBook = ViewModelGetBook(book)
         setContent {
             HackathonTheme {
                 Surface(
@@ -65,6 +85,11 @@ Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GetBookActivityPrevew(){
-    val viewModelGetBook = ViewModelGetBook()
+    val viewModelGetBook = ViewModelGetBook(Book(1,"Ведьмаг дикая охота","«Сага о ведьмаке» — цикл книг польского писателя Анджея Сапковского в жанре фэнтези.\n" +
+            "\n" +
+            "Первый рассказ цикла увидел свет в 1986 году, а последняя книга — в 2013. Действие книг происходит в вымышленном Мире «Ведьмака», напоминающем Европу времён позднего средневековья, где рядом с людьми существуют разного рода волшебные существа и чудовища.\n" +
+            "\n" +
+            "Геральт из Ривии — один из последних «ведьмаков», бродячих охотников на чудовищ","Книга","2015")
+    )
     GetBookActivity(viewModelGetBook)
 }
