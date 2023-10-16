@@ -61,6 +61,7 @@ Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment
         Text(text = "год")
         Text(text = "тип")
     }
+    Text(text = "описание")
 
     
 }
