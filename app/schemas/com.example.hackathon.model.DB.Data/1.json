@@ -2,11 +2,81 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "d0a7f3431057b83cf8531d3aa84aebc7",
+    "identityHash": "001ba3a9e080181dc8ce6974e9dae903",
     "entities": [
       {
+        "tableName": "Chapters",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `describe` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name_chapter",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "describe",
+            "columnName": "describe",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Authors",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `FirstName` TEXT NOT NULL, `name` TEXT NOT NULL, `LastName` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "first",
+            "columnName": "FirstName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "last",
+            "columnName": "LastName",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "Book",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL, `Describe` TEXT NOT NULL, `Type` TEXT NOT NULL, `Data` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL, `Describe` TEXT NOT NULL, `Type` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -31,10 +101,108 @@
             "columnName": "Type",
             "affinity": "TEXT",
             "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SimpleAuthorBook",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_athor` INTEGER NOT NULL, `Id_book` INTEGER NOT NULL, PRIMARY KEY(`id_athor`))",
+        "fields": [
+          {
+            "fieldPath": "id_athor",
+            "columnName": "id_athor",
+            "affinity": "INTEGER",
+            "notNull": true
           },
           {
-            "fieldPath": "year",
-            "columnName": "Data",
+            "fieldPath": "id_book",
+            "columnName": "Id_book",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id_athor"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SimpleTagsBooks",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_author` INTEGER NOT NULL, `Id_Tag` INTEGER NOT NULL, PRIMARY KEY(`id_author`))",
+        "fields": [
+          {
+            "fieldPath": "id_author",
+            "columnName": "id_author",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id_tag",
+            "columnName": "Id_Tag",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id_author"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Status",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_book` INTEGER NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id_book`))",
+        "fields": [
+          {
+            "fieldPath": "id_book",
+            "columnName": "id_book",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id_book"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Tags",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `Name_tage` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name_tags",
+            "columnName": "Name_tage",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -52,7 +220,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd0a7f3431057b83cf8531d3aa84aebc7')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '001ba3a9e080181dc8ce6974e9dae903')"
     ]
   }
 }
