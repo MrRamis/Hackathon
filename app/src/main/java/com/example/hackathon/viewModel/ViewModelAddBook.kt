@@ -1,4 +1,6 @@
 package com.example.hackathon.viewModel
 
-class ViewModelAddBook {
+import androidx.lifecycle.ViewModel
+
+class ViewModelAddBook : ViewModel() {
 }

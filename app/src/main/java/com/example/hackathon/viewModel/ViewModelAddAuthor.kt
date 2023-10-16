@@ -1,4 +1,6 @@
 package com.example.hackathon.viewModel
 
-class ViewModelAddAuthor {
+import androidx.lifecycle.ViewModel
+
+class ViewModelAddAuthor : ViewModel() {
 }
