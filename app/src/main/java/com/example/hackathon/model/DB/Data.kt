@@ -9,6 +9,8 @@ import com.example.hackathon.model.DB.Enties.Books
 
 @Database (entities = [Books::class], version = 1)
 abstract class Data : RoomDatabase() {
+
+    abstract fun getDao() : Dao
     companion object
     {
         fun getDb(context: Context):Data{

@@ -9,4 +9,4 @@ import java.time.LocalDate
 data class Chapters (@PrimaryKey(autoGenerate = true) var id : Int? = null,
                      @ColumnInfo(name = "name") var name_chapter : String,
                      @ColumnInfo(name = "describe") var describe : String? = null,
-                     @ColumnInfo(name = "year") var date : LocalDate )
+                     @ColumnInfo(name = "year") var date :  LocalDate )
