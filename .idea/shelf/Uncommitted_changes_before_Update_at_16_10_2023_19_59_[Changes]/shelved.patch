@@ -1,0 +1,358 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43_[Changes]/shelved.patch	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
++++ /dev/null	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
+@@ -1,102 +0,0 @@
+-Index: app/src/main/java/com/example/hackathon/view/MainActivity.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.hackathon.view\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.Surface\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport com.example.hackathon.ui.theme.HackathonTheme\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContent {\r\n            HackathonTheme {\r\n                Surface(\r\n                    modifier = Modifier.fillMaxSize(),\r\n                    color = MaterialTheme.colorScheme.background\r\n                ) {\r\n                    Greeting(\"lololol\")\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Composable\r\nfun Greeting(name: String, modifier: Modifier = Modifier) {\r\n    Text(\r\n        text = \"Hello $name!\",\r\n        modifier = modifier\r\n    )\r\n}\r\n\r\n@Preview(showBackground = true)\r\n@Composable\r\nfun GreetingPreview() {\r\n    HackathonTheme {\r\n        Greeting(\"Android\")\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/hackathon/view/MainActivity.kt b/app/src/main/java/com/example/hackathon/view/MainActivity.kt
+---- a/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(revision 7e62c86e72390f85211c4a7127399541cc43ebf1)
+-+++ b/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(date 1697474627096)
+-@@ -1,4 +1,9 @@
+- package com.example.hackathon.view
+-+
+-+import androidx.compose.material3.ExperimentalMaterial3Api
+-+import androidx.compose.material3.Scaffold
+-+import androidx.compose.runtime.ComposableInferredTarget
+-+//package com.example.helloapp
+- import android.os.Bundle
+- import androidx.activity.ComponentActivity
+- import androidx.activity.compose.setContent
+-@@ -7,38 +12,54 @@
+- import androidx.compose.material3.Surface
+- import androidx.compose.material3.Text
+- import androidx.compose.runtime.Composable
+--import androidx.compose.ui.Modifier
+-+import androidx.compose.foundation.layout.Spacer
+-+import androidx.compose.material.*
+-+import androidx.compose.material.icons.Icons
+-+import androidx.compose.material.icons.filled.Favorite
+-+import androidx.compose.material.icons.filled.Info
+-+import androidx.compose.material.icons.filled.Menu
+-+import androidx.compose.material.icons.filled.Search
+-+import androidx.compose.material3.ScaffoldDefaults
+- import androidx.compose.ui.tooling.preview.Preview
+- import com.example.hackathon.ui.theme.HackathonTheme
+-+import androidx.compose.ui.Modifier
+-+import androidx.compose.ui.unit.sp
+- 
+- class MainActivity : ComponentActivity() {
+-     override fun onCreate(savedInstanceState: Bundle?) {
+-         super.onCreate(savedInstanceState)
+-         setContent {
+--            HackathonTheme {
+--                Surface(
+--                    modifier = Modifier.fillMaxSize(),
+--                    color = MaterialTheme.colorScheme.background
+--                ) {
+--                    Greeting("lololol")
+--                }
+--            }
+-+
+-         }
+-+//            HackathonTheme {
+-+//                Surface(
+-+//                    modifier = Modifier.fillMaxSize(),
+-+//                    color = MaterialTheme.colorScheme.background
+-+//                ) {
+-+//                    Greeting("lololol")
+-+//                }
+-+//            }
+-+//        }
+-+//    }
+-+//
+-     }
+--}
+-+
+- 
+--@Composable
+--fun Greeting(name: String, modifier: Modifier = Modifier) {
+--    Text(
+--        text = "Hello $name!",
+--        modifier = modifier
+--    )
+--}
+--
+--@Preview(showBackground = true)
+--@Composable
+--fun GreetingPreview() {
+--    HackathonTheme {
+--        Greeting("Android")
+--    }
+--}
+-\ No newline at end of file
+-+    @Composable
+-+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+-+
+-+        Text(
+-+            //text = "METANIT.COM",
+-+            text = "Hello $name!",
+-+            modifier = modifier
+-+        )
+-+    }
+-+}
+-+
+-+//@Preview(showBackground = true)
+-+//@Composable
+-+//fun GreetingPreview() {
+-+//    HackathonTheme {
+-+//        Greeting("Android")
+-+//    }
+-+//}
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44_[Changes]/shelved.patch	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
++++ /dev/null	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
+@@ -1,19 +0,0 @@
+-Index: app/src/main/java/com/example/hackathon/view/MainActivity.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.hackathon.view\r\n\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.Surface\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport com.example.hackathon.ui.theme.HackathonTheme\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        var test = 0\r\n        setContent {\r\n            HackathonTheme {\r\n                // A surface container using the 'background' color from the theme\r\n                Surface(\r\n                    modifier = Modifier.fillMaxSize(),\r\n                    color = MaterialTheme.colorScheme.background\r\n                ) {\r\n                    Greeting(\"Hakathon!! It's us\")\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Composable\r\nfun Greeting(name: String, modifier: Modifier = Modifier) {\r\n    Text(\r\n        text = \"Hello $name!\",\r\n        modifier = modifier\r\n    )\r\n}\r\n\r\n@Preview(showBackground = true)\r\n@Composable\r\nfun GreetingPreview() {\r\n    HackathonTheme {\r\n        Greeting(\"Android\")\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/hackathon/view/MainActivity.kt b/app/src/main/java/com/example/hackathon/view/MainActivity.kt
+---- a/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(revision ac0d708635de6a4004638e6394a4ceef391d6132)
+-+++ b/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(date 1697470362862)
+-@@ -23,7 +23,7 @@
+-                     modifier = Modifier.fillMaxSize(),
+-                     color = MaterialTheme.colorScheme.background
+-                 ) {
+--                    Greeting("Hakathon!! It's us")
+-+                    Greeting("Hakathon908!! It's us")
+-                 }
+-             }
+-         }
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44__Changes_.xml	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
++++ /dev/null	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_16_10_2023_18_44_[Changes]" date="1697471063624" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_18_44_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 16.10.2023 18:44 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47__Changes_.xml	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
++++ /dev/null	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_16_10_2023_19_47_[Changes]" date="1697474839355" recycled="false" toDelete="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 16.10.2023 19:47 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43__Changes_.xml	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
++++ /dev/null	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_16_10_2023_19_43_[Changes]" date="1697474628835" recycled="false" toDelete="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_43_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 16.10.2023 19:43 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2023_19_47_[Changes]/shelved.patch	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
++++ /dev/null	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
+@@ -1,102 +0,0 @@
+-Index: app/src/main/java/com/example/hackathon/view/MainActivity.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.hackathon.view\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.Surface\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport com.example.hackathon.ui.theme.HackathonTheme\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContent {\r\n            HackathonTheme {\r\n                Surface(\r\n                    modifier = Modifier.fillMaxSize(),\r\n                    color = MaterialTheme.colorScheme.background\r\n                ) {\r\n                    Greeting(\"lololol\")\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Composable\r\nfun Greeting(name: String, modifier: Modifier = Modifier) {\r\n    Text(\r\n        text = \"Hello $name!\",\r\n        modifier = modifier\r\n    )\r\n}\r\n\r\n@Preview(showBackground = true)\r\n@Composable\r\nfun GreetingPreview() {\r\n    HackathonTheme {\r\n        Greeting(\"Android\")\r\n    }\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/hackathon/view/MainActivity.kt b/app/src/main/java/com/example/hackathon/view/MainActivity.kt
+---- a/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(revision 7e62c86e72390f85211c4a7127399541cc43ebf1)
+-+++ b/app/src/main/java/com/example/hackathon/view/MainActivity.kt	(date 1697474684710)
+-@@ -1,4 +1,9 @@
+- package com.example.hackathon.view
+-+
+-+import androidx.compose.material3.ExperimentalMaterial3Api
+-+import androidx.compose.material3.Scaffold
+-+import androidx.compose.runtime.ComposableInferredTarget
+-+//package com.example.helloapp
+- import android.os.Bundle
+- import androidx.activity.ComponentActivity
+- import androidx.activity.compose.setContent
+-@@ -7,38 +12,54 @@
+- import androidx.compose.material3.Surface
+- import androidx.compose.material3.Text
+- import androidx.compose.runtime.Composable
+--import androidx.compose.ui.Modifier
+-+import androidx.compose.foundation.layout.Spacer
+-+import androidx.compose.material.*
+-+import androidx.compose.material.icons.Icons
+-+import androidx.compose.material.icons.filled.Favorite
+-+import androidx.compose.material.icons.filled.Info
+-+import androidx.compose.material.icons.filled.Menu
+-+import androidx.compose.material.icons.filled.Search
+-+import androidx.compose.material3.ScaffoldDefaults
+- import androidx.compose.ui.tooling.preview.Preview
+- import com.example.hackathon.ui.theme.HackathonTheme
+-+import androidx.compose.ui.Modifier
+-+import androidx.compose.ui.unit.sp
+- 
+- class MainActivity : ComponentActivity() {
+-     override fun onCreate(savedInstanceState: Bundle?) {
+-         super.onCreate(savedInstanceState)
+-         setContent {
+--            HackathonTheme {
+--                Surface(
+--                    modifier = Modifier.fillMaxSize(),
+--                    color = MaterialTheme.colorScheme.background
+--                ) {
+--                    Greeting("lololol")
+--                }
+--            }
+-+
+-         }
+-+//            HackathonTheme {
+-+//                Surface(
+-+//                    modifier = Modifier.fillMaxSize(),
+-+//                    color = MaterialTheme.colorScheme.background
+-+//                ) {
+-+//                    Greeting("lololol")
+-+//                }
+-+//            }
+-+//        }
+-+//    }
+-+//
+-     }
+--}
+-+
+- 
+--@Composable
+--fun Greeting(name: String, modifier: Modifier = Modifier) {
+--    Text(
+--        text = "Hello $name!",
+--        modifier = modifier
+--    )
+--}
+--
+--@Preview(showBackground = true)
+--@Composable
+--fun GreetingPreview() {
+--    HackathonTheme {
+--        Greeting("Android")
+--    }
+--}
+-\ No newline at end of file
+-+    @Composable
+-+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+-+
+-+        Text(
+-+            //text = "METANIT.COM",
+-+            text = "Hello $name!",
+-+            modifier = modifier
+-+        )
+-+    }
+-+}
+-+
+-+//@Preview(showBackground = true)
+-+//@Composable
+-+//fun GreetingPreview() {
+-+//    HackathonTheme {
+-+//        Greeting("Android")
+-+//    }
+-+//}
+-\ No newline at end of file
+Index: app/schemas/com.example.hackathon.model.DB.Data/1.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"formatVersion\": 1,\r\n  \"database\": {\r\n    \"version\": 1,\r\n    \"identityHash\": \"bfb35b0e8d00531ba19e31ae5a015088\",\r\n    \"entities\": [\r\n      {\r\n        \"tableName\": \"Manga\",\r\n        \"createSql\": \"CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idmanga` INTEGER PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL, `` INTEGER NOT NULL)\",\r\n        \"fields\": [\r\n          {\r\n            \"fieldPath\": \"idmanga\",\r\n            \"columnName\": \"idmanga\",\r\n            \"affinity\": \"INTEGER\",\r\n            \"notNull\": false\r\n          },\r\n          {\r\n            \"fieldPath\": \"namemanga\",\r\n            \"columnName\": \"Name\",\r\n            \"affinity\": \"TEXT\",\r\n            \"notNull\": true\r\n          },\r\n          {\r\n            \"fieldPath\": \"idtag\",\r\n            \"columnName\": \"\",\r\n            \"affinity\": \"INTEGER\",\r\n            \"notNull\": true\r\n          }\r\n        ],\r\n        \"primaryKey\": {\r\n          \"autoGenerate\": true,\r\n          \"columnNames\": [\r\n            \"idmanga\"\r\n          ]\r\n        },\r\n        \"indices\": [],\r\n        \"foreignKeys\": []\r\n      }\r\n    ],\r\n    \"views\": [],\r\n    \"setupQueries\": [\r\n      \"CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)\",\r\n      \"INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bfb35b0e8d00531ba19e31ae5a015088')\"\r\n    ]\r\n  }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/schemas/com.example.hackathon.model.DB.Data/1.json b/app/schemas/com.example.hackathon.model.DB.Data/1.json
+--- a/app/schemas/com.example.hackathon.model.DB.Data/1.json	(revision f6c3711bdb44ba5bbf2937edb23c637e70cdd420)
++++ b/app/schemas/com.example.hackathon.model.DB.Data/1.json	(date 1697475406178)
+@@ -2,35 +2,47 @@
+   "formatVersion": 1,
+   "database": {
+     "version": 1,
+-    "identityHash": "bfb35b0e8d00531ba19e31ae5a015088",
++    "identityHash": "d0a7f3431057b83cf8531d3aa84aebc7",
+     "entities": [
+       {
+-        "tableName": "Manga",
+-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idmanga` INTEGER PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL, `` INTEGER NOT NULL)",
++        "tableName": "Book",
++        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `Name` TEXT NOT NULL, `Describe` TEXT NOT NULL, `Type` TEXT NOT NULL, `Data` TEXT NOT NULL)",
+         "fields": [
+           {
+-            "fieldPath": "idmanga",
+-            "columnName": "idmanga",
++            "fieldPath": "id",
++            "columnName": "id",
+             "affinity": "INTEGER",
+             "notNull": false
+           },
+           {
+-            "fieldPath": "namemanga",
++            "fieldPath": "name",
+             "columnName": "Name",
+             "affinity": "TEXT",
+             "notNull": true
+           },
+           {
+-            "fieldPath": "idtag",
+-            "columnName": "",
+-            "affinity": "INTEGER",
++            "fieldPath": "describe",
++            "columnName": "Describe",
++            "affinity": "TEXT",
++            "notNull": true
++          },
++          {
++            "fieldPath": "type",
++            "columnName": "Type",
++            "affinity": "TEXT",
++            "notNull": true
++          },
++          {
++            "fieldPath": "year",
++            "columnName": "Data",
++            "affinity": "TEXT",
+             "notNull": true
+           }
+         ],
+         "primaryKey": {
+           "autoGenerate": true,
+           "columnNames": [
+-            "idmanga"
++            "id"
+           ]
+         },
+         "indices": [],
+@@ -40,7 +52,7 @@
+     "views": [],
+     "setupQueries": [
+       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bfb35b0e8d00531ba19e31ae5a015088')"
++      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd0a7f3431057b83cf8531d3aa84aebc7')"
+     ]
+   }
+ }
+\ No newline at end of file
