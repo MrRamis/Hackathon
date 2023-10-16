@@ -1,6 +1,5 @@
 package com.example.hackathon.view
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,30 +8,24 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.Button
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.hackathon.ui.theme.HackathonTheme
-import javax.net.ssl.HostnameVerifier
+import com.example.hackathon.viewModel.Book
+import com.example.hackathon.viewModel.ViewModelGetBook
 
 class ViewGetBookActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val viewModelGetBook = ViewModelGetBook()
         setContent {
             HackathonTheme {
                 Surface(
@@ -40,7 +33,7 @@ class ViewGetBookActivity: ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    GetBookActivity()
+                    GetBookActivity(viewModelGetBook)
                 }
             }
         }
@@ -48,21 +41,30 @@ class ViewGetBookActivity: ComponentActivity() {
 }
 
 
-@Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun GetBookActivity() {
+fun GetBookActivity(viewModel: ViewModelGetBook) {
 Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally ) {
-    Text(text = "название")
+    val vm by viewModel.book.collectAsState()
+    Text(text = vm.name)
     Row(modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceAround
     ) {
-        Text(text = "год")
-        Text(text = "тип")
+        Text(text = vm.date)
+        Text(text = vm.type)
     }
-    Text(text = "описание")
+    Text(text = vm.describe)
 
     
 }
+}
+
+
+@Preview
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun GetBookActivityPrevew(){
+    val viewModelGetBook = ViewModelGetBook()
+    GetBookActivity(viewModelGetBook)
 }
