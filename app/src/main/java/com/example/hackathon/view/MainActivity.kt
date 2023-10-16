@@ -91,42 +91,25 @@ fun MyScreenContent() {
 
                 },
                 actions = {
-                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-                            Button(
-                                onClick = { /* Handle navigation icon click */ },
-                                modifier = Modifier
-                                    .width(85.dp) // specify the desired width
-                                    .padding(13.dp) // optional padding
-                            ) {
-                                Icon(Icons.Default.Add, contentDescription = "Menu")
-
-                            }
-                        Button(onClick = { /* Handle navigation icon click */ },
-                                modifier = Modifier
-                                .width(85.dp) // specify the desired width
-                                .padding(13.dp) // optional padding
-                        ) {
-//                            Box(Modifier.padding(8.dp)){
-//                                Text(text ="Tvft")
-//                            }
-                            Icon(Icons.Default.Add, contentDescription = "add")
-
-
+                    Row {
+                        IconButton(onClick = { /* Handle navigation icon click */ }) {
+                            Icon(Icons.Default.Add, contentDescription = "Menu")
                         }
-
+                        IconButton(onClick = { /* Handle navigation icon click */ }) {
+                            Icon(Icons.Default.Add, contentDescription = "add")
+//
+                        }
                     }
 
-
                 }
-
             )
         },
         content = {
-            Column {
+            //Column {
 
-                Divider()
-                NameList(names = listOf("Alice", "Bob", "Charlie"))
-            }
+                //Divider()
+                NameList(names = listOf("Alice", "Charlie"))
+            //}
         }
     )
 }
@@ -141,14 +124,14 @@ fun Spacer(weight: Modifier) {
 
 @Composable
 fun NameList(names: List<String>) {
-    Column {
+   Column {
         for (name in names) {
             Text(text = name, modifier = Modifier.padding(16.dp))
         }
     }
 }
 
-//@Preview
+@Preview
 @Composable
 fun DefaultPreview() {
     MyScreenContent()
