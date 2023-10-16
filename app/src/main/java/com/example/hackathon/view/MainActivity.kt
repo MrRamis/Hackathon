@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
         @Composable
         fun GreetingPreview() {
             HackathonTheme {
-                Greeting("Android")
+                Greeting("Androigggd")
             }
         }
     }
