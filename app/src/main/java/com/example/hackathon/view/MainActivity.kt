@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -26,9 +27,13 @@ import com.example.hackathon.ui.theme.HackathonTheme
 
 import androidx.compose.material.*
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.materialIcon
+import androidx.compose.material3.Button
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContent {
             HackathonTheme {
@@ -37,6 +42,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting("lololol")
+                    MyScreenContent()
                 }
             }
         }
@@ -50,8 +56,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             text = "Hello $name!",
             modifier = modifier
         )
-
-
 
 }
 
@@ -74,14 +78,38 @@ fun MyScreenContent() {
 
                 title = {
                     Text(text = "")
-                }, actions = {
+                }, navigationIcon = {
+                    Row {
+
+                        Button(onClick = { /* Handle navigation icon click */ }) {
+                            Text(text = "all")
+
+                        }
+
+                        Button(onClick = { /* Handle navigation icon click */ }) {
+                            Text(text = "read")
+                        }
+                        //spacer()
+                        //Spacer(modifier = Modifier.weight(0.5f))
+                        Button(onClick = { /* Handle navigation icon click */ }) {
+                            Text(text = "future")
+                        }
+                        Button(onClick = { /* Handle navigation icon click */ }) {
+                            Text(text = "fav")
+                            //materialIcon()
+                        }
+                    }
+                },actions = {
                     Row {
                             IconButton(onClick = { /* Handle navigation icon click */ }) {
                                 Icon(Icons.Default.Add, contentDescription = "Menu")
                             }
                         IconButton(onClick = { /* Handle navigation icon click */ }) {
                             Icon(Icons.Default.Add, contentDescription = "add")
+
                         }
+
+
                     }
 
 
@@ -93,7 +121,7 @@ fun MyScreenContent() {
             Column {
                 Greeting("Hello")
                 Divider()
-                NameList(names = listOf("Alice", "Bob", "Charlie"))
+                NameList(names = listOf("Alice", "Charlie"))
             }
         }
     )
