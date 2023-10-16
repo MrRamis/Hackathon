@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Hakathon!! It's us")
+                    Greeting("Hakathon9087548!! It's us")
                 }
             }
         }
