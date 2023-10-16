@@ -1,15 +1,18 @@
 package com.example.hackathon.model.DB
 
-import android.content.ClipData.Item
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.example.hackathon.model.DB.Enties.Books
 
 @Dao
 interface Dao {
-    @Insert
-    fun Insert(item: Item)
 
-    @Query("select * from Manga")
-    fun getListManga() : List<Item>
+    @Insert
+    fun insert(item: Books)
+
+    @Query("select * from Book")
+    fun getListManga() : List<Books>
+
+
 }
