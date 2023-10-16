@@ -29,11 +29,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hackathon.ui.theme.HackathonTheme
+import androidx.compose.runtime.mutableStateOf
+
 
 import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.materialIcon
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.TextField
 
 
 class MainActivity : ComponentActivity() {
@@ -61,6 +66,13 @@ class MainActivity : ComponentActivity() {
 @Composable
 
 fun MyScreenContent() {
+   // var isWindowOpen by remember { mutableStateOf(false) }
+    var isAlertDialogVisible by remember { mutableStateOf(false) }
+    var titleText by remember { mutableStateOf("") }
+    var contentText by remember { mutableStateOf("") }
+    var  isAlertDialogVisible2 by remember { mutableStateOf(false) }
+    var titleText2 by remember { mutableStateOf("") }
+    var contentText2 by remember { mutableStateOf("") }
     Scaffold(
         topBar = {
             TopAppBar(
@@ -71,20 +83,20 @@ fun MyScreenContent() {
                 navigationIcon ={
                     Row{
                         Button(onClick = {  }) {
-                            Text(text = "Все")
+                            Text(text = "All")
                                 //border = BorderStroke(3.dp, Color.DarkGray)
                             //Icon(Icons.Default.Add, contentDescription = "Reading")
                         }
                         Button(onClick = { /* Handle navigation icon click */ }) {
-                            Text(text = "read")
+                            Text(text = "Read")
                         }
                         //spacer()
                         //Spacer(modifier = Modifier.weight(0.5f))
                         Button(onClick = { /* Handle navigation icon click */ }) {
-                            Text(text = "future")
+                            Text(text = "Next")
                         }
                         Button(onClick = { /* Handle navigation icon click */ }) {
-                            Text(text = "fav")
+                            Text(text = "Fav")
                             //materialIcon()
                         }
                     }
@@ -92,11 +104,75 @@ fun MyScreenContent() {
                 },
                 actions = {
                     Row {
-                        IconButton(onClick = { /* Handle navigation icon click */ }) {
-                            Icon(Icons.Default.Add, contentDescription = "Menu")
+                        IconButton(onClick = { isAlertDialogVisible = true}) {
+                            Icon(Icons.Default.Add, contentDescription = "Author")
+                            if (isAlertDialogVisible) {
+                                AlertDialog(
+                                    onDismissRequest = { isAlertDialogVisible = false },
+                                    // Отслеживаем запрос на закрытие окна
+                                    title = {  TextField(
+                                        value = titleText,
+                                        onValueChange = { titleText = it },
+                                        label = { Text("Заголовок окна") }
+                                    ) },
+                                    text = {
+                                        TextField(
+                                            value = contentText,
+                                            onValueChange = { contentText = it },
+                                            label = { Text("Содержимое окна") }
+                                        )
+                                    },
+                                    confirmButton = {
+                                        Button(
+                                            onClick = { isAlertDialogVisible = false } // Закрыть окно при нажатии на кнопку подтверждения
+                                        ) {
+                                            Text(text = "Подтвердить")
+                                        }
+                                    },
+                                    dismissButton = {
+                                        Button(
+                                            onClick = { isAlertDialogVisible = false } // Закрыть окно при нажатии на кнопку отмены
+                                        ) {
+                                            Text(text = "Отмена")
+                                        }
+                                    }
+                                )
+                            }
                         }
-                        IconButton(onClick = { /* Handle navigation icon click */ }) {
-                            Icon(Icons.Default.Add, contentDescription = "add")
+                        IconButton(onClick = { isAlertDialogVisible2 = true }) {
+                            Icon(Icons.Default.Add, contentDescription = "Book")
+                            if (isAlertDialogVisible2) {
+                                AlertDialog(
+                                    onDismissRequest = { isAlertDialogVisible2 = false },
+                                    // Отслеживаем запрос на закрытие окна
+                                    title = {  TextField(
+                                        value = titleText2,
+                                        onValueChange = { titleText2 = it },
+                                        label = { Text("Заголовок окна") }
+                                    ) },
+                                    text = {
+                                        TextField(
+                                            value = contentText2,
+                                            onValueChange = { contentText2 = it },
+                                            label = { Text("Содержимое окна") }
+                                        )
+                                    },
+                                    confirmButton = {
+                                        Button(
+                                            onClick = { isAlertDialogVisible2 = false } // Закрыть окно при нажатии на кнопку подтверждения
+                                        ) {
+                                            Text(text = "Подтвердить")
+                                        }
+                                    },
+                                    dismissButton = {
+                                        Button(
+                                            onClick = { isAlertDialogVisible2 = false } // Закрыть окно при нажатии на кнопку отмены
+                                        ) {
+                                            Text(text = "Отмена")
+                                        }
+                                    }
+                                )
+                            }
 //
                         }
                     }
