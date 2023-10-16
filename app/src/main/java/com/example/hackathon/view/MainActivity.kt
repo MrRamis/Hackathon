@@ -1,5 +1,4 @@
 package com.example.hackathon.view
-
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -21,7 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Hakathon!! It's us")
+                    Greeting("lololol")
                 }
             }
         }
