@@ -1,6 +1,5 @@
-//package com.example.hackathon.model.DB
+package com.example.hackathon.model.DB
 
-/*
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -18,4 +17,4 @@ interface Dao {
     fun getListManga() : Flow<List<Books>>
 
 
-}*/
+}
