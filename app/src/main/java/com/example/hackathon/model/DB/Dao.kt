@@ -1,9 +1,11 @@
-package com.example.hackathon.model.DB
+//package com.example.hackathon.model.DB
 
+/*
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.hackathon.model.DB.Enties.Books
+
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -16,4 +18,4 @@ interface Dao {
     fun getListManga() : Flow<List<Books>>
 
 
-}
+}*/
