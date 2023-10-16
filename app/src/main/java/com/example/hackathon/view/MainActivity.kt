@@ -102,11 +102,11 @@ fun MyScreenContent() {
             )
         },
         content = {
-            //Column {
+            Column {
 
-                //Divider()
+                Divider()
                 NameList(names = listOf("Alice", "Charlie"))
-            //}
+            }
         }
     )
 }
