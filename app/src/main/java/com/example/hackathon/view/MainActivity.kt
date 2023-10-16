@@ -113,15 +113,15 @@ fun MyScreenContent() {
                                     title = {  TextField(
                                         value = titleText,
                                         onValueChange = { titleText = it },
-                                        label = { Text("Заголовок окна") }
+                                        label = { Text("Автор") }
                                     ) },
-                                    text = {
-                                        TextField(
-                                            value = contentText,
-                                            onValueChange = { contentText = it },
-                                            label = { Text("Содержимое окна") }
-                                        )
-                                    },
+//                                    text = {
+//                                        TextField(
+//                                            value = contentText,
+//                                            onValueChange = { contentText = it },
+//                                            label = { Text("Содержимое окна") }
+//                                        )
+//                                    },
                                     confirmButton = {
                                         Button(
                                             onClick = { isAlertDialogVisible = false } // Закрыть окно при нажатии на кнопку подтверждения
@@ -148,13 +148,13 @@ fun MyScreenContent() {
                                     title = {  TextField(
                                         value = titleText2,
                                         onValueChange = { titleText2 = it },
-                                        label = { Text("Заголовок окна") }
+                                        label = { Text("Название книги") }
                                     ) },
                                     text = {
                                         TextField(
                                             value = contentText2,
                                             onValueChange = { contentText2 = it },
-                                            label = { Text("Содержимое окна") }
+                                            label = { Text("Автор") }
                                         )
                                     },
                                     confirmButton = {
