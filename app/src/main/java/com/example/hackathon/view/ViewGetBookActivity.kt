@@ -23,9 +23,12 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hackathon.ui.theme.HackathonTheme
+import javax.net.ssl.HostnameVerifier
 
 class ViewGetBookActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +40,7 @@ class ViewGetBookActivity: ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-                    DefaultPreview()
+                    GetBookActivity()
                 }
             }
         }
@@ -45,16 +48,20 @@ class ViewGetBookActivity: ComponentActivity() {
 }
 
 
+@Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
 fun GetBookActivity() {
-Column() {
+Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally ) {
     Text(text = "название")
-    Column() {
+    Row(modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceAround
+    ) {
         Text(text = "год")
         Text(text = "тип")
     }
+
     
 }
 }
