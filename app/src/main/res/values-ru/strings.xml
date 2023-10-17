@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hackathon</string>
+    <string name="allbtn">Все</string>
+    <string name="readbtn">Читаю</string>
+    <string name="futurebtn">Будущее</string>
+    <string name="favbtn">Избранное</string>
+</resources>

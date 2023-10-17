@@ -1,8 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Hackathon</string>
     <string name="allbtn">All</string>
     <string name="readbtn">Read</string>
     <string name="futurebtn">Future</string>
     <string name="favbtn">Fav</string>
-    <string name="title_activity_add_book">AddBook</string>
 </resources>
