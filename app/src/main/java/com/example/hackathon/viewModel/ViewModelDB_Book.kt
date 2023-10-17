@@ -2,6 +2,7 @@ package com.example.hackathon.viewModel
 
 import androidx.lifecycle.ViewModel
 import com.example.hackathon.model.DB.Data
+import com.example.hackathon.model.DB.Enties.Books
 import com.example.hackathon.model.TypeBook
 import com.example.hackathon.model.modelCreateTable
 import com.example.hackathon.model.model_DeleteDb
@@ -16,11 +17,11 @@ class ViewModelDB_Book : ViewModel() {
     {
          return modelCreateTable.createTableBook(name,describe,type,date.toString())
     }
-    fun insertBook(db : Data, vararg books : Book_test){
+    fun insertBook(db : Data, vararg books : Books){
         for(i in books)
             model_Ins.insertBook(db, i)
     }
-    fun deleteBook(db:Data, vararg books: Book_test)
+    fun deleteBook(db:Data, vararg books: Books)
     {
         for (i in books)
             model_Del.deleteBook(db,i)
