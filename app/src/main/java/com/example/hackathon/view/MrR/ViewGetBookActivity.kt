@@ -1,4 +1,4 @@
-package com.example.hackathon.view
+package com.example.hackathon.view.MrR
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -63,7 +63,6 @@ class ViewGetBookActivity(): ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-
 fun GetBookActivity(viewModel: ViewModelGetBook) {
 Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally ) {
     val vm by viewModel.book.collectAsState()
