@@ -6,10 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.hackathon.view.MrR.AddAuthorActivity
 //import com.example.hackathon.view.MrR.GetBookActivity
-import com.example.hackathon.view.MrR.MainActivityRa
 import com.example.hackathon.view.MrR.MyScreenContent
-import com.example.hackathon.view.MrR.ViewGetBookActivity
-import com.example.hackathon.viewModel.Book
+
 //import com.example.hackathon.viewModel.ViewModelGetBook
 
 

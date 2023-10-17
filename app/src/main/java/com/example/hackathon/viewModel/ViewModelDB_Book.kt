@@ -12,15 +12,15 @@ class ViewModelDB_Book : ViewModel() {
     private val modelCreateTable = modelCreateTable()
     private val model_Ins = model_InsertDb()
     private val model_Del = model_DeleteDb()
-    fun createTableBook(name : String, describe : String, type : TypeBook, date : LocalDate) : Book
+    fun createTableBook(name : String, describe : String, type : TypeBook, date : LocalDate) : Book_test
     {
          return modelCreateTable.createTableBook(name,describe,type,date.toString())
     }
-    fun insertBook(db : Data, vararg books : Book){
+    fun insertBook(db : Data, vararg books : Book_test){
         for(i in books)
             model_Ins.insertBook(db, i)
     }
-    fun deleteBook(db:Data, vararg books: Book)
+    fun deleteBook(db:Data, vararg books: Book_test)
     {
         for (i in books)
             model_Del.deleteBook(db,i)

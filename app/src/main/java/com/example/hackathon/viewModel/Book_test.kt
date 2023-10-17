@@ -1,9 +1,7 @@
 package com.example.hackathon.viewModel
 
-import kotlinx.coroutines.flow.MutableStateFlow
 
-
-data class Book(
+data class Book_test(
     var id: Int? = null,
     var name: String = "",
     var describe: String = " ",
