@@ -4,4 +4,5 @@
     <string name="readbtn">Read</string>
     <string name="futurebtn">Future</string>
     <string name="favbtn">Fav</string>
+    <string name="title_activity_add_book">AddBook</string>
 </resources>
