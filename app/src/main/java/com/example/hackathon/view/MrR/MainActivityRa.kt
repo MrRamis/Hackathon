@@ -1,10 +1,12 @@
 package com.example.hackathon.view.MrR
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,10 +14,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -34,6 +38,7 @@ import com.example.hackathon.ui.theme.HackathonTheme
 import androidx.compose.material.*
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.ListItem
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
@@ -122,29 +127,62 @@ fun MyScreenContent() {
 }
 
 
-@Composable
-fun Spacer(weight: Modifier) {
-
-}
-
-
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun NameList(names: List<String>) {
-
-    LazyColumn(
-        modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(16.dp)
-    ) {
-
-        items(names) { item ->
-            /*Spacer(modifier = Modifier.height(100.dp))*/
-            Text(text = item)
+    LazyColumn() {
+        items(names) { bo ->
+            Bootem(bo)
         }
-
     }
 }
+@Composable
+fun Bootem(bo: String) {
+    Card(
+        shape = RoundedCornerShape(8.dp),
+        modifier = Modifier
+            .padding(16.dp)
+            .clickable {        }
+    ) {
+        //places its children in a horizontal sequence.
+        Row(
+            modifier = Modifier
+                .padding(8.dp)
+        ) {
+            //places its children in a vertical sequence.
+            Column(
+                modifier = Modifier
+                    .weight(6f, true)
+                    .padding(20.dp, 0.dp, 0.dp, 0.dp),
+            ) {
+                //used to display text
+
+                Text(
+                    text = "by ${bo}",
+
+                    )
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @Preview
 @Composable
