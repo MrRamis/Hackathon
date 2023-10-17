@@ -22,6 +22,12 @@ class ViewModelAddBook : ViewModel() {
     private val mutabledateFlow = MutableStateFlow<LocalDate>(LocalDate.now())
     val date = mutabledateFlow.asStateFlow()
 
+    fun getbook(name:String?, describe : String?){
+        val debug = Debug()
+        mutablenameFlow.value = debug.checknullElementString(name)
+        mutabledescribeFlow.value = debug.checknullElementString(describe)
+    }
+
     fun getbook(name:String?, describe : String?, type : TypeBook?, date : LocalDate?){
         val debug = Debug()
         mutablenameFlow.value = debug.checknullElementString(name)

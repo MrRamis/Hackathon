@@ -47,6 +47,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.hackathon.R
+import com.example.hackathon.model.DB.Dao.DaoBook
+import com.example.hackathon.model.DB.Data
 import com.example.hackathon.navigation.NavGraph
 import com.example.hackathon.navigation.Screens
 
@@ -60,6 +62,7 @@ class MainActivityRa : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                  ////////////////////////  val book =
                     val navController = rememberNavController()
                     NavGraph(navController = navController)
                 }
@@ -120,15 +123,10 @@ fun MyScreenContent(navController: NavController) {
         },
         content = {
             Column {
-
                 Divider()
                 NameList(names = listOf("book", "authogfdgdfgdfgfdgdfgr", "author",
                     "autdfgdfgdfgdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgdfhor",
-                    "author", "audfgdfgdfgthor", "author", "author", "author", "author", "author",
-                     "author", "author", "author", "author", "author", "author", "author", "author",
-                    "author", "author", "author", "author", "author", "author", "author", "author", "author",
-                    "author", "author", "author", "author", "author", "author",
-                    "authauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthoror")
+                    "author", "audfgdfgdfgthor")
                     ,navController)
             }
         }

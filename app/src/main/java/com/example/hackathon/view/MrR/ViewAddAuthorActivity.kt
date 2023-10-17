@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
@@ -24,9 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.hackathon.ui.theme.HackathonTheme
 
-//import com.example.hackathon.viewModel.ViewModelGetBook
-
-class ViewAddAuthorActivity : ComponentActivity() {
+/*class ViewAddAuthorActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -41,19 +40,15 @@ class ViewAddAuthorActivity : ComponentActivity() {
             }
         }
     }
-}
+}*/
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddAuthorActivity() {
+    ScaffoldExample()
 
 
 }
-@Composable
-fun AddAu(){
-    Text(text = "yhtf")
-}
-
 
 @Preview
 @Composable
@@ -66,8 +61,6 @@ fun AddAuthorActivityPreview(){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScaffoldExample() {
-
-
     Scaffold(
         topBar = {
             TopAppBar(
