@@ -8,5 +8,5 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface DaoBook : Dao_Original<Books> {
     @Query("select * from Book")
-    fun getListManga() : Flow<List<Books>>
+    fun getListManga() : List<Books>
 }

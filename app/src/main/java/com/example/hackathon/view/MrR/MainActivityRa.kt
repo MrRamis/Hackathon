@@ -49,6 +49,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.hackathon.R
 import com.example.hackathon.model.DB.Dao.DaoBook
 import com.example.hackathon.model.DB.Data
+import com.example.hackathon.model.DB.Enties.Books
 import com.example.hackathon.navigation.NavGraph
 import com.example.hackathon.navigation.Screens
 
@@ -62,7 +63,8 @@ class MainActivityRa : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                  ////////////////////////  val book =
+                  val bd = Data.getDb(this)
+                  val book =   bd.getDaoBook().getListManga()
                     val navController = rememberNavController()
                     NavGraph(navController = navController)
                 }
@@ -77,7 +79,9 @@ class MainActivityRa : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun MyScreenContent(navController: NavController) {
+fun MyScreenContent(navController: NavController ) {
+    val bo : List<Books> = listOf<Books>( Books(id = 9, name = "fds", describe = "fd", type = "fdf", date = "dfsd"),
+        Books(id = 9, name = "fds", describe = "fd", type = "fdf", date = "dfsd"))
     Scaffold(
         topBar = {
             TopAppBar(
@@ -124,9 +128,7 @@ fun MyScreenContent(navController: NavController) {
         content = {
             Column {
                 Divider()
-                NameList(names = listOf("book", "authogfdgdfgdfgfdgdfgr", "author",
-                    "autdfgdfgdfgdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgdfhor",
-                    "author", "audfgdfgdfgthor")
+                NameList(names = bo
                     ,navController)
             }
         }
@@ -137,7 +139,7 @@ fun MyScreenContent(navController: NavController) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun NameList(names: List<String>,navController: NavController) {
+fun NameList(names: List<Books>,navController: NavController) {
     LazyColumn() {
         items(names) { bo ->
             Bootem(bo, navController)
@@ -145,7 +147,7 @@ fun NameList(names: List<String>,navController: NavController) {
     }
 }
 @Composable
-fun Bootem(bo: String,navController: NavController) {
+fun Bootem(bo: Books,navController: NavController) {
     Card(
         shape = RoundedCornerShape(8.dp),
         modifier = Modifier
@@ -168,7 +170,7 @@ fun Bootem(bo: String,navController: NavController) {
                 //used to display text
 
                 Text(
-                    text = "by ${bo}"
+                    text = " ${bo.name}"
                     )
 
             }

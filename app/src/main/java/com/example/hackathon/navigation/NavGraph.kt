@@ -17,7 +17,7 @@ fun NavGraph (navController: NavHostController) {
         startDestination = Screens.Main.route
     )
     {
-        composable(route = Screens.Main.route) {
+        composable(route = Screens.Main.route  ) {
             MyScreenContent(navController)
         }
         composable(route = Screens.GetBook.route) {
