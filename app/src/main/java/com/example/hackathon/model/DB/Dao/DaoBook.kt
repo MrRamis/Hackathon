@@ -9,13 +9,7 @@ import com.example.hackathon.viewModel.Book
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface DaoBook {
-    @Insert
-    fun insert(item: Book)
-
-    @Delete
-    fun delete(item: Book)
-
+interface DaoBook : Dao_Original<Books> {
     @Query("select * from Book")
     fun getListManga() : Flow<List<Books>>
 }

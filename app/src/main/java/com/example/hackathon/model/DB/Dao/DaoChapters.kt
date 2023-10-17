@@ -7,9 +7,7 @@ import com.example.hackathon.model.DB.Enties.Chapters
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface DaoChapters {
-    @Insert
-    fun insert(item: Chapters)
+interface DaoChapters : Dao_Original<Chapters> {
 
     @Query("select * from Chapters")
     fun getListManga() : Flow<List<Chapters>>

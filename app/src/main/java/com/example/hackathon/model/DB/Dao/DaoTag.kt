@@ -8,10 +8,7 @@ import com.example.hackathon.model.DB.Enties.Tags
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface DaoTag {
-
-    @Insert
-    fun insert(item: Tags)
+interface DaoTag : Dao_Original<Tags> {
 
     @Query("select * from Tags")
     fun getListManga() : Flow<List<Tags>>

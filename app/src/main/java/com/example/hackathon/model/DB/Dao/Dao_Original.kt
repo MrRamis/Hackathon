@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 
 
 @Dao
-abstract class Dao_Original <T> {
+abstract interface Dao_Original <T> {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insert(entity: T?)
 

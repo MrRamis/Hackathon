@@ -10,16 +10,9 @@ import com.example.hackathon.model.DB.Enties.Author
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface DaoAuthor {
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(item: Author)
-
-    @Delete
-    fun delete(item: Author)
+interface DaoAuthor : Dao_Original<Author> {
 
     @Query("select * from Authors")
     fun getListManga() : Flow<List<Author>>
-
 
 }

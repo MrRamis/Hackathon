@@ -8,7 +8,7 @@ import com.example.hackathon.viewModel.Book
 
 class model_InsertDb {
     fun insertAuthor(db : Data,authors : Author){
-        db.getDaoAuthor().insert(item = authors)
+        db.getDaoAuthor().insert(authors)
     }
 
     fun insertBook(db : Data, books : Book){
