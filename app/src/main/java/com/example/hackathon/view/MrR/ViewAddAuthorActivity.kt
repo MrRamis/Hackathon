@@ -44,7 +44,7 @@ import com.example.hackathon.ui.theme.HackathonTheme
 import com.example.hackathon.view.DefaultPreview
 import com.example.hackathon.view.NameList
 import com.example.hackathon.viewModel.Book
-import com.example.hackathon.viewModel.ViewModelGetBook
+//import com.example.hackathon.viewModel.ViewModelGetBook
 
 class ViewAddAuthorActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

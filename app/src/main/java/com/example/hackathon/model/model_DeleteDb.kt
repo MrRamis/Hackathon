@@ -10,7 +10,7 @@ class model_DeleteDb
 {
     fun deleteBook(db: Data,books: Book)
     {
-        db.getDaoBook().delete(books)
+        //db.getDaoBook().delete(books)
     }
 
     fun deleteAuthor(db: Data, i: Author) {
