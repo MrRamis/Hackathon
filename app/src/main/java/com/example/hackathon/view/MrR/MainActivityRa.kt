@@ -1,12 +1,25 @@
 package com.example.hackathon.view.MrR
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -25,10 +38,17 @@ import com.example.hackathon.ui.theme.HackathonTheme
 import androidx.compose.material.*
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.ListItem
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.hackathon.R
 import com.example.hackathon.navigation.NavGraph
+import com.example.hackathon.navigation.Screens
 
 
 class MainActivityRa : ComponentActivity() {
@@ -54,7 +74,7 @@ class MainActivityRa : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun MyScreenContent() {
+fun MyScreenContent(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -64,7 +84,7 @@ fun MyScreenContent() {
                 },
                 navigationIcon ={
                     Row{
-                        Button(onClick = {  }) {
+                        Button(onClick = {   }) {
                             Text(text = stringResource(id = R.string.allbtn))
                                 //border = BorderStroke(3.dp, Color.DarkGray)
                             //Icon(Icons.Default.Add, contentDescription = "Reading")
@@ -102,44 +122,82 @@ fun MyScreenContent() {
             Column {
 
                 Divider()
-                NameList(names = listOf("book", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author"))
+                NameList(names = listOf("book", "authogfdgdfgdfgfdgdfgr", "author",
+                    "autdfgdfgdfgdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgdfhor",
+                    "author", "audfgdfgdfgthor", "author", "author", "author", "author", "author",
+                     "author", "author", "author", "author", "author", "author", "author", "author",
+                    "author", "author", "author", "author", "author", "author", "author", "author", "author",
+                    "author", "author", "author", "author", "author", "author",
+                    "authauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthoror")
+                    ,navController)
             }
         }
     )
 }
 
 
+
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Spacer(weight: Modifier) {
-
-}
-
-
-
-@Composable
-fun NameList(names: List<String>) {
-    Column {
-        //Spacer(modifier = Modifier.weight(1f))
-        Row {
-
-
-            for (name in names) {
-                Text(text = "ree", modifier = Modifier.padding(16.dp))
-
-            }
+fun NameList(names: List<String>,navController: NavController) {
+    LazyColumn() {
+        items(names) { bo ->
+            Bootem(bo, navController)
         }
-//сделать диначический row
-        Row {
+    }
+}
+@Composable
+fun Bootem(bo: String,navController: NavController) {
+    Card(
+        shape = RoundedCornerShape(8.dp),
+        modifier = Modifier
+            .padding(16.dp)
+            .clickable {
+                navController.navigate(Screens.GetBook.route)
+            }
+    ) {
+        //places its children in a horizontal sequence.
+        Row(
+            modifier = Modifier
+                .padding(8.dp)
+        ) {
+            //places its children in a vertical sequence.
+            Column(
+                modifier = Modifier
+                    .weight(6f, true)
+                    .padding(20.dp, 0.dp, 0.dp, 0.dp),
+            ) {
+                //used to display text
 
-            for (name in names) {
-                Text(text = name, modifier = Modifier.padding(16.dp))
+                Text(
+                    text = "by ${bo}"
+                    )
+
             }
         }
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @Preview
 @Composable
 fun DefaultPreview() {
-    MyScreenContent()
+    val navController = rememberNavController()
+    NavGraph(navController = navController)
+    MyScreenContent(navController)
 }
