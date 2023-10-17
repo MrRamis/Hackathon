@@ -44,9 +44,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.hackathon.R
 import com.example.hackathon.navigation.NavGraph
+import com.example.hackathon.navigation.Screens
 
 
 class MainActivityRa : ComponentActivity() {
@@ -72,7 +74,7 @@ class MainActivityRa : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 
-fun MyScreenContent() {
+fun MyScreenContent(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -82,7 +84,7 @@ fun MyScreenContent() {
                 },
                 navigationIcon ={
                     Row{
-                        Button(onClick = {  }) {
+                        Button(onClick = {   }) {
                             Text(text = stringResource(id = R.string.allbtn))
                                 //border = BorderStroke(3.dp, Color.DarkGray)
                             //Icon(Icons.Default.Add, contentDescription = "Reading")
@@ -120,7 +122,14 @@ fun MyScreenContent() {
             Column {
 
                 Divider()
-                NameList(names = listOf("book", "authogfdgdfgdfgfdgdfgr", "author", "autdfgdfgdfgdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgdfhor", "author", "audfgdfgdfgthor", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "author", "authauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthoror"))
+                NameList(names = listOf("book", "authogfdgdfgdfgfdgdfgr", "author",
+                    "autdfgdfgdfgdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffgdfhor",
+                    "author", "audfgdfgdfgthor", "author", "author", "author", "author", "author",
+                     "author", "author", "author", "author", "author", "author", "author", "author",
+                    "author", "author", "author", "author", "author", "author", "author", "author", "author",
+                    "author", "author", "author", "author", "author", "author",
+                    "authauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthorauthoror")
+                    ,navController)
             }
         }
     )
@@ -130,20 +139,22 @@ fun MyScreenContent() {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun NameList(names: List<String>) {
+fun NameList(names: List<String>,navController: NavController) {
     LazyColumn() {
         items(names) { bo ->
-            Bootem(bo)
+            Bootem(bo, navController)
         }
     }
 }
 @Composable
-fun Bootem(bo: String) {
+fun Bootem(bo: String,navController: NavController) {
     Card(
         shape = RoundedCornerShape(8.dp),
         modifier = Modifier
             .padding(16.dp)
-            .clickable {        }
+            .clickable {
+                navController.navigate(Screens.GetBook.route)
+            }
     ) {
         //places its children in a horizontal sequence.
         Row(
@@ -159,8 +170,7 @@ fun Bootem(bo: String) {
                 //used to display text
 
                 Text(
-                    text = "by ${bo}",
-
+                    text = "by ${bo}"
                     )
 
             }
@@ -187,5 +197,7 @@ fun Bootem(bo: String) {
 @Preview
 @Composable
 fun DefaultPreview() {
-    MyScreenContent()
+    val navController = rememberNavController()
+    NavGraph(navController = navController)
+    MyScreenContent(navController)
 }

@@ -25,7 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.hackathon.ui.theme.HackathonTheme
 
-class ViewAddAuthorActivity : ComponentActivity() {
+/*class ViewAddAuthorActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -40,12 +40,12 @@ class ViewAddAuthorActivity : ComponentActivity() {
             }
         }
     }
-}
+}*/
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddAuthorActivity() {
-
+    ScaffoldExample()
 
 }
 @Composable
