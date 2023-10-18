@@ -24,6 +24,7 @@ abstract class Data : RoomDatabase() {
     abstract fun getDaoBook() : DaoBook
     abstract fun getDaoTag() : DaoTag
     abstract fun getDaoChapter() : DaoChapters
+
     companion object
     {
         fun getDb(context: Context):Data{

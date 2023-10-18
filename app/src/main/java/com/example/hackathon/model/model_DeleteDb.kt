@@ -9,6 +9,7 @@ class model_DeleteDb
 {
     fun deleteBook(db: Data,books: Books)
     {
+        val scope =
         db.getDaoBook().delete(books)
     }
 

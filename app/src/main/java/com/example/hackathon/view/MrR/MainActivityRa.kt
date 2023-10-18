@@ -63,8 +63,7 @@ class MainActivityRa : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                  val bd = Data.getDb(this)
-                  val book =   bd.getDaoBook().getListManga()
+
                     val navController = rememberNavController()
                     NavGraph(navController = navController)
                 }

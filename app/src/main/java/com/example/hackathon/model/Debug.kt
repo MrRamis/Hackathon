@@ -15,6 +15,9 @@ class Debug {
     {
         if(element == null)
             return LocalDate.now()
+        else
+            if (element > LocalDate.now())
+                return LocalDate.now()
         return element
     }
     fun checknullElementState(element: TypeBook?) : TypeBook

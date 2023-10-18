@@ -16,7 +16,7 @@ class ViewModelAddAuthor : ViewModel()
     private val mutablelastnameFlow = MutableStateFlow("")
     val lastname = mutablelastnameFlow.asStateFlow()
 
-    fun getFIO(firstname : String, name:String, lastname : String)
+    fun getFIO(firstname : String?, name:String?, lastname : String?)
     {
         val debug = Debug()
         mutablenameFlow.value = debug.checknullElementString(name)
